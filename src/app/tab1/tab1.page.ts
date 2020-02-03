@@ -54,8 +54,10 @@ export class Tab1Page {
           this.IndexOperator += 1;
           this.Calculate += '' + signe; 
            // Le tableau recoit l'element precedent le signe de calcul
-          this.list.push(Number(this.Calculate.substring(this.Calculate.indexOf(signe, this.IndexOperator),
-           this.Calculate.lastIndexOf(signe))));
+          let nbr:number = Number(this.Calculate.substring(this.Calculate.indexOf(signe, this.IndexOperator),
+          this.Calculate.lastIndexOf(signe)));
+          nbr = Math.abs(nbr) ;
+          this.list.push(nbr);
           this.readyForAnother = false;
           console.log(this.list);
        }}
@@ -85,8 +87,11 @@ export class Tab1Page {
       this.list.forEach( function(value, index, array) {
         if (index === 0 ) {
            moins = value;
+           console.log(value);
         }else{
-          moins -= value;
+          console.log(value);
+          moins -=  value;
+
         }
        });
       this.Calculate = '' +  moins;
