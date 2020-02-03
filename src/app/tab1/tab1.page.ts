@@ -28,11 +28,11 @@ export class Tab1Page {
   readyForAnother = false; 
   // Declaration d'un tableau contenant les differents symboles de la calculatrice
   numberGroups = [
-    ['.' , 'Sup' , 'sqrt' , 'x^2'],
+    ['.' , 'Sup' , 'sqrt' , '%'],
     [7 , 8 , 9 , 'x'],
     [4 , 5 , 6 , '-'],
     [1 , 2 , 3 , '+'],
-    [0 , '/' , '=', 'C'],
+    [0 , '/' , '=', 'AC'],
 
   ];
 
@@ -127,6 +127,28 @@ export class Tab1Page {
           this.list = [];
           this.Operator = '';
           }  
+
+          else if (this.Operator === '%' ) {
+            let div: number;
+            this.list.forEach( function(value, index, array) {
+              if (index === 0 ) {
+                div = value;
+              }else{
+                if (value === 0) {
+                  this.Calculate = 'Error';
+                  this.valueInit = true;
+                  this.list = [];
+                  this.Operator = '';
+                } else {
+                  div %= value;
+                }
+               
+              }
+            });
+            this.Calculate = '' + div;
+            this.list = [];
+            this.Operator = '';
+            }    
     }
      else{
        
@@ -151,7 +173,7 @@ export class Tab1Page {
 
     }
     // La fonction pour efacer l'ecran
-    else if(symbol === 'C'){
+    else if(symbol === 'AC'){
       this.Calculate = '0';
       this.valueInit = true;
 
