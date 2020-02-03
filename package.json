@@ -54,5 +54,8 @@
     "tslint": "~5.15.0",
     "typescript": "~3.4.3"
   },
+  "config": {
+    "ionic_enable_lint": false
+  },
   "description": "An Ionic project"
 }
