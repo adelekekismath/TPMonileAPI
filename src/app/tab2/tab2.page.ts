@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { DataService } from '../services/data.service';
 
 @Component({
   selector: 'app-tab2',
@@ -7,6 +8,21 @@ import { Component } from '@angular/core';
 })
 export class Tab2Page {
 
-  constructor() {}
+  public result = [];
+
+  constructor( private results : DataService){
+    this.Data();
+   }
+
+  Data(){
+   this.results.getData().subscribe(data => {
+      this.result = data
+      console.log(this.result); 
+    });
+    
+  
+} 
+    
+  
 
 }

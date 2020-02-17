@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/app/tabs/speakers"></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{item.name.first}}
+      {{item.name.last}}
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content class="ion-padding speaker-detail">
+  <div class="ion-text-center">
+    <img [src]="item.picture.large" [alt]="item.name.first + ' profile picture'">
+    <br>
+    <br>
+    <span> Genre : </span> {{item.gender}}
+    <br>
+
+   <span> Nom complet :</span>  {{item.name.title}} {{item.name.first}} {{item.name.last}}
+    <br>
+    <span>  Adresse :</span>  Rue {{item.location.street.name}}  {{item.location.street.number}} à  {{item.location.city}}  
+    <br>
+    <span>  Adresse :</span>  Rue {{item.location.street.name}}  {{item.location.street.number}} à  {{item.location.city}}  
+ 
+  </div>
+<span></span>
+  <p>{{speaker?.about}}</p>
+</ion-content>

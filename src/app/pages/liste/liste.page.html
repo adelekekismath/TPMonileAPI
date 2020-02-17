@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>liste</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+   <ion-grid fixed>
+    <ion-row class="ion-align-items-stretch">
+      <ion-col size="12" size-md="6" *ngFor="let item of result.results" >
+        <ion-card class="speaker-card" >
+          <ion-card-header >
+            <ion-item  lines="none" (click)="clicker(item)"  >
+              <ion-avatar slot="start">
+                <img [src]="item.picture.medium" [alt]="item.name.first + ' profile picture'">
+              </ion-avatar>
+              {{item.name.first}}
+              {{item.name.last}}
+            </ion-item>
+          </ion-card-header>
+            </ion-card>
+        </ion-col>
+        </ion-row>
+  </ion-grid>
+</ion-content>
