@@ -24,8 +24,8 @@ export class ListePage  {
    this.results.getData().subscribe(data => {
       this.result = data
       console.log(this.result); 
+      
     });
     
-  
 } 
 }
