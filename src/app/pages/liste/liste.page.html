@@ -7,10 +7,10 @@
 <ion-content>
    <ion-grid fixed>
     <ion-row class="ion-align-items-stretch">
-      <ion-col size="12" size-md="6" *ngFor="let item of result.results" >
+      <ion-col size="12" size-md="6" *ngFor="let item of result" >
         <ion-card class="speaker-card" >
           <ion-card-header >
-            <ion-item  lines="none" (click)="clicker(item)"  >
+            <ion-item  lines="none" (click)="clicker(item.id)"  >
               <ion-avatar slot="start">
                 <img [src]="item.picture.medium" [alt]="item.name.first + ' profile picture'">
               </ion-avatar>

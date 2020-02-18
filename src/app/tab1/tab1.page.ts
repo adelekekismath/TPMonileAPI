@@ -13,15 +13,8 @@ export class Tab1Page {
     public result = [];
 
     constructor( private results : DataService){
-      this.Data();
+      
      }
 
-    Data(){
-     this.results.getData().subscribe(data => {
-        this.result = data
-        console.log(this.result); 
-      });
-      
-    
-  } 
+   
 }

@@ -1,33 +1,30 @@
-class Name{
-    public  title: string;
-    public first: string;
-    public last: string;
+interface Name{
+      title: string;
+     first: string;
+     last: string;
 }
-class Street{
-    public  number:Number;
-    public name: string;
+interface Street{
+      number:Number;
+     name: string;
 }
 
-class Picture{
+interface Picture{
     large: string;
     medium: string;
     thumbnail: string;
  
 
 }
-class ID{
-    name: string;
-    value: string;
-}
-class  registered{
+
+interface  registered{
     date: string;
     age: Number;
 }
-class Dob{
+interface Dob{
     date: string;
     age: Number;
 }
-class Login{
+interface Login{
     uuid: string;
     username: string;
     password: string;
@@ -38,40 +35,40 @@ class Login{
 
 }
 
-class Timezone{
-    public offset:string;
-    public description: string;
+interface Timezone{
+     offset:string;
+     description: string;
 }
 
-class Coordinates {
-    public latitude: string;
-    public longitude: string;
+interface Coordinates {
+     latitude: string;
+     longitude: string;
 }
-class location  {
-    public  street : Street;
-    public city: string;
-    public state: string;
-    public country:string;
-    public postcode: number;
-    public coordinates: Coordinates;
-    public timezone: Timezone;
+interface location  {
+      street : Street;
+     city: string;
+     state: string;
+     country:string;
+     postcode: number;
+     coordinates: Coordinates;
+     timezone: Timezone;
 
 }
 
 
-export class Result{
-    public gender: string;
-    public name : Name;
-    public location : location;
-    public email: string;
-    public login : Login;
-    public dob : Dob;
-    public registered : registered;
-    public phone: string;
-    public cell: string;
-    public id: ID;
-    public picture : Picture;
-    public nat : string;
+export interface Result{
+     gender: string;
+     name : Name;
+     location : location;
+     email: string;
+     login : Login;
+     dob : Dob;
+     registered : registered;
+     phone: string;
+     cell: string;
+     id: Number;
+     picture : Picture;
+     nat : string;
    
 }
 

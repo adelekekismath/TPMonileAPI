@@ -1,37 +1,34 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { DataService } from 'src/app/services/data.service';
+import { Result } from 'src/app/User';
 
 @Component({
   selector: 'app-detail',
   templateUrl: './detail.page.html',
   styleUrls: ['./detail.page.scss'],
 })
-export class DetailPage implements OnInit {
+export class DetailPage implements OnInit  {
 
-  item: string;
-  result = [];
+  UserID: string;
+  item : Result;
   
   constructor(private activatedRoute: ActivatedRoute , private results : DataService) {
-      this.Data();
+  
+    
    }
  
   ngOnInit() {
-    // 
-   let itemS = this.activatedRoute.snapshot.paramMap.get('item');
-   this.item = JSON.parse(itemS);
-    console.log(this.item); 
     
+    this.UserID  = this.activatedRoute.snapshot.paramMap.get('item');
+    console.log(this.UserID);
+    this.results.getOneUser(this.UserID).subscribe(data => {
+       this.item = data
+       console.log(this.item); 
+     });
+  
   }
 
-  Data(){
-    this.results.getData().subscribe(data => {
-       this.result = data
-       console.log(this.result); 
-     });
-     
-   
- } 
- 
+  
 
 }

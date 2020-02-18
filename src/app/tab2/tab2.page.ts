@@ -11,18 +11,14 @@ export class Tab2Page {
   public result = [];
 
   constructor( private results : DataService){
-    this.Data();
+    
    }
 
-  Data(){
-   this.results.getData().subscribe(data => {
-      this.result = data
-      console.log(this.result); 
-    });
+ 
     
   
 } 
     
   
 
-}
+

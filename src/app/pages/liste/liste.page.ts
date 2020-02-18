@@ -10,18 +10,18 @@ import { Router } from '@angular/router';
 })
 export class ListePage  {
 
-  public result = [];
+  public result : Result[];
 
   constructor( private results : DataService, public router: Router){
     this.Data();
    }
-   clicker(item : Result){
-    let  resultString = JSON.stringify(item);
-    this.router.navigate(['detail', resultString] );
+   clicker(id: Number){
+    
+    this.router.navigate(['detail', id] );
    }
 
   Data(){
-   this.results.getData().subscribe(data => {
+   this.results.getEveryUser().subscribe(data => {
       this.result = data
       console.log(this.result); 
       
